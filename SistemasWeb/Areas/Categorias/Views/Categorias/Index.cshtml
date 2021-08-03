@@ -1,0 +1,82 @@
+﻿@model DataPaginador<TCategoria>
+@{
+    ViewData["Title"] = "Categorías";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Categorías</h1>
+<div class="float-lg-right">
+    <p>
+        <a data-toggle="modal" data-target="#modal1" class="btn btn-info text-white">Crear categoría</a>
+    </p>
+</div>
+<div class="modal fade" data-backdrop="static" id="modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalTitle">Agregar categoría</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form method="post" class="formCategoria">|
+                <div class="modal-body">
+                    <div class="form-horizontal">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label asp-for="Entity.Code" class="control-label"></label>
+                                    <input asp-for="Entity.Code" placeholder="Código" class="form-control" />
+                                    <span asp-validation-for="Entity.Code" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <label asp-for="Entity.Name" class="control-label"></label>
+                                    <input asp-for="Entity.Name" placeholder="Nombre" class="form-control" />
+                                    <span asp-validation-for="Entity.Name" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label asp-for="Entity.Description" class="control-label"></label>
+                                    <textarea asp-for="Entity.Description" placeholder="Descripción" class="form-control"> </textarea>
+                                    <span asp-validation-for="Entity.Description" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label asp-for="Entity.State" class="control-label"></label>
+                                    <div class="inline-group">
+                                        <label class="radio">
+                                            <input asp-for="Entity.State"  type="radio" value="true" />
+                                            <i></i> Si
+                                        </label>
+                                        <label class="radio">
+                                            <input asp-for="Entity.State" type="radio" style="margin-left: 5px;" value="false" />
+                                            <i></i> No
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <span id="message" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                    <button type="submit" onclick="categorias.RegistrarCategoria()" class="btn btn-primary">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+@section Scripts{
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+
+}
+
