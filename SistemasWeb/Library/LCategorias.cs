@@ -1,4 +1,6 @@
-﻿using SistemasWeb.Data;
+﻿using Microsoft.AspNetCore.Identity;
+using SistemasWeb.Areas.Categorias.Models;
+using SistemasWeb.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,11 +10,31 @@ namespace SistemasWeb.Library
 {
     public class LCategorias
     {
-        private ApplicationDbContext context;
+        private ApplicationDbContext _context;
 
         public LCategorias(ApplicationDbContext context)
         {
-            this.context = context;
+            _context = context;
+        }
+
+        public IdentityError RegistrarCategoria(TCategoria categoria)
+        {
+            IdentityError identityError;
+            try
+            {
+                _context.Add(categoria);
+                _context.SaveChanges();
+                identityError = new IdentityError { Code = "Done" };
+            }
+            catch(Exception ex)
+            {
+                identityError = new IdentityError
+                {
+                    Code = "Error",
+                    Description = ex.Message
+                };
+            }
+            return identityError;
         }
     }
 }

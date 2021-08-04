@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using SistemasWeb.Areas.Categorias.Models;
 using SistemasWeb.Controllers;
 using SistemasWeb.Data;
@@ -15,6 +16,7 @@ namespace SistemasWeb.Areas.Categorias.Controllers
 {
     [Area("Categorias")]
     [Route("Categorias/[controller]/[action]")]
+    [Authorize]
     public class CategoriasController : Controller
     {
         private TCategoria _categoria;
@@ -46,11 +48,12 @@ namespace SistemasWeb.Areas.Categorias.Controllers
             }
         }
         [HttpPost]
-        public String SaveCategorias(DataPaginador<TCategoria> model)
+        public string SaveCategorias(DataPaginador<TCategoria> model)
         {
             if(model.Entity.Name != null && model.Entity.Code != null)
             {
-                return "Hola";
+                var result = _lCategoria.RegistrarCategoria(model.Entity);
+                return JsonConvert.SerializeObject(result);
             }
             else
             {

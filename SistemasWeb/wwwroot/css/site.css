@@ -35,6 +35,11 @@ a.navbar-brand {
 .navbar-brand{
     max-width: 45%;
 }
+.hidenn {
+    visibility: hidden;
+    height: 0px;
+    width: 0px;
+}
 /* Provide sufficient contrast against white background */
 a {
     color: #0366d6;

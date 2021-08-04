@@ -19,7 +19,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form method="post" class="formCategoria">|
+            <form method="post" class="formCategoria">
                 <div class="modal-body">
                     <div class="form-horizontal">
                         <div class="row">
@@ -53,7 +53,7 @@
                                     <label asp-for="Entity.State" class="control-label"></label>
                                     <div class="inline-group">
                                         <label class="radio">
-                                            <input asp-for="Entity.State"  type="radio" value="true" />
+                                            <input asp-for="Entity.State" type="radio" value="true" />
                                             <i></i> Si
                                         </label>
                                         <label class="radio">
@@ -65,11 +65,12 @@
                             </div>
                         </div>
                         <span id="message" class="text-danger"></span>
+                        <input type="text" required class="hidenn" />
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                    <button type="submit" onclick="categorias.RegistrarCategoria()" class="btn btn-primary">Guardar</button>
+                    <button onclick="categorias.RegistrarCategoria()" class="btn btn-primary">Guardar</button>
                 </div>
             </form>
         </div>
