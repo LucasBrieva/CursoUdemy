@@ -30,12 +30,18 @@ namespace SistemasWeb.Areas.Categorias.Controllers
             _lCategoria = new LCategorias(context);
         }
 
-        public IActionResult Index()
+        public IActionResult Index(int id, string search, int records)
         {
             if (_signInManager.IsSignedIn(User))
             {
+                //Con esto 'Request.Scheme' obtengo el https. Con esto 'Request.Host.Value' obtengo el host
+                var url = Request.Scheme + "://" + Request.Host.Value;
+                var objects = new LPaginador<TCategoria>().Paginador(_lCategoria.GetByFilterCategorias(search), id, records, "Categorias", "Categorias", "Index", url);
                 models = new DataPaginador<TCategoria>
                 {
+                    List = (List<TCategoria>)objects[2],
+                    PagiInfo = (string)objects[0],
+                    PagiNavegation = (string)objects[1],
                     Entity = new TCategoria(),
                 };
                 return View(models);

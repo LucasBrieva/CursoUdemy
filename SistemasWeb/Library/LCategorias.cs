@@ -36,5 +36,18 @@ namespace SistemasWeb.Library
             }
             return identityError;
         }
+        public List<TCategoria> GetByFilterCategorias(string text)
+        {
+            List<TCategoria> listCategorias;
+            if(text == null)
+            {
+                listCategorias = _context.TCategoria.ToList();
+            }
+            else
+            {
+                listCategorias = _context.TCategoria.Where(c => c.Name.StartsWith(text)).ToList();
+            }
+            return listCategorias;
+        }
     }
 }
