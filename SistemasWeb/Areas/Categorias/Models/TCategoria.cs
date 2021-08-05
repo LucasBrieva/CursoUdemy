@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemasWeb.Areas.Productos.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -8,6 +9,7 @@ namespace SistemasWeb.Areas.Categorias.Models
 {
     public class TCategoria
     {
+        [Key]
         public int Id { get; set; }
 
         [Required(ErrorMessage = "*Campo obligatorio")]
@@ -27,6 +29,6 @@ namespace SistemasWeb.Areas.Categorias.Models
         [Display(Name = "Estado")]
         public bool State { get; set; } = true;
 
-        //public ICollection<TProductos> Productos { get; set; }
+        public ICollection<TProducto> Productos { get; set; }
     }
 }

@@ -67,6 +67,11 @@ namespace SistemasWeb
                     pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
                     );
                 endpoints.MapAreaControllerRoute(
+                    name: "Productos",
+                    areaName: "Productos",
+                    pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+                    );
+                endpoints.MapAreaControllerRoute(
                     name: "Principal",
                     areaName: "Principal",
                     pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"

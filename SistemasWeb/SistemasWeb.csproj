@@ -6,6 +6,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Data\Migrations\20210804210810_Categorias_Productos_Db.cs" />
+    <Compile Remove="Data\Migrations\20210804210810_Categorias_Productos_Db.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210804211227_Categorias_Productos_Db.cs" />
+    <Compile Remove="Data\Migrations\20210804211227_Categorias_Productos_Db.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210804211346_Categorias_Productos_Db.cs" />
+    <Compile Remove="Data\Migrations\20210804211346_Categorias_Productos_Db.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.1.17" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.17" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.17" />
@@ -19,6 +28,9 @@
     <Folder Include="Areas\Categorias\Data\" />
     <Folder Include="Areas\Principal\Data\" />
     <Folder Include="Areas\Principal\Models\" />
+    <Folder Include="Areas\Productos\Controllers\" />
+    <Folder Include="Areas\Productos\Data\" />
+    <Folder Include="Areas\Productos\Views\" />
     <Folder Include="wwwroot\Images\" />
   </ItemGroup>
 
