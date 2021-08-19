@@ -135,8 +135,9 @@ namespace SistemasWeb.Library
                 //El último registro de la página actual será igual al nro de registros
                 pagi_to = pagi_totalRecord;
             }
-            string pagi_info = " del <b>" + pagi_from + "</b> al <b>" + pagi_to + "</b> de <b>" + pagi_current + "</b> <b>/ " + pagi_totalPags + 
-                " registros por página </b>";
+            pagi_totalPags = pagi_totalPags == 0 ? 1 : pagi_totalPags;
+            string pagi_info = "Resultados del <b>" + pagi_from + "</b> al <b>" + pagi_to + "</b> página <b>" + pagi_current + "</b> <b>/ " + pagi_totalPags + 
+                "</b>";
             //Acá primero almaceno la información que agregue al final, la navegación de las flechas y los nros para las diferentes páginas y el query que es la cantidad 
             //de registros que vamos a visualizar. 
             object[] data = { pagi_info, pagi_navegation, query };

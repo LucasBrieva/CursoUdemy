@@ -34,9 +34,20 @@ namespace SistemasWeb.Areas.Categorias.Controllers
         {
             if (_signInManager.IsSignedIn(User))
             {
-                //Con esto 'Request.Scheme' obtengo el https. Con esto 'Request.Host.Value' obtengo el host
-                var url = Request.Scheme + "://" + Request.Host.Value;
-                var objects = new LPaginador<TCategoria>().Paginador(_lCategoria.GetByFilterCategorias(search), id, records, "Categorias", "Categorias", "Index", url);
+                Object[] objects = new Object[3];
+                var data = _lCategoria.GetByFilterCategorias(search);
+                if(data.Count > 0)
+                {
+                    //Con esto 'Request.Scheme' obtengo el https. Con esto 'Request.Host.Value' obtengo el host
+                    var url = Request.Scheme + "://" + Request.Host.Value;
+                    objects = new LPaginador<TCategoria>().Paginador(data, id, records, "Categorias", "Categorias", "Index", url);
+                }
+                else
+                {
+                    objects[0] = "";
+                    objects[1] = "No hay datos que mostrar";
+                    objects[2] = new List<TCategoria>();
+                }
                 models = new DataPaginador<TCategoria>
                 {
                     List = (List<TCategoria>)objects[2],
@@ -45,7 +56,6 @@ namespace SistemasWeb.Areas.Categorias.Controllers
                     Entity = new TCategoria(),
                 };
                 return View(models);
-
             }
             else
             {
@@ -53,6 +63,7 @@ namespace SistemasWeb.Areas.Categorias.Controllers
 
             }
         }
+        
         [HttpPost]
         public string SaveCategorias(DataPaginador<TCategoria> model)
         {

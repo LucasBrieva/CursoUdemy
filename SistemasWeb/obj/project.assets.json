@@ -8936,19 +8936,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Lucas\\.nuget\\packages\\": {}
+    "C:\\Users\\lebrieva\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Lucas\\Desktop\\Curso .Net Core\\Primera aplicación\\SistemasWeb\\SistemasWeb\\SistemasWeb.csproj",
+      "projectUniqueName": "D:\\Vs\\Curso .Net Core\\Primera aplicación\\SistemasWeb\\SistemasWeb\\SistemasWeb.csproj",
       "projectName": "SistemasWeb",
-      "projectPath": "C:\\Users\\Lucas\\Desktop\\Curso .Net Core\\Primera aplicación\\SistemasWeb\\SistemasWeb\\SistemasWeb.csproj",
-      "packagesPath": "C:\\Users\\Lucas\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Lucas\\Desktop\\Curso .Net Core\\Primera aplicación\\SistemasWeb\\SistemasWeb\\obj\\",
+      "projectPath": "D:\\Vs\\Curso .Net Core\\Primera aplicación\\SistemasWeb\\SistemasWeb\\SistemasWeb.csproj",
+      "packagesPath": "C:\\Users\\lebrieva\\.nuget\\packages\\",
+      "outputPath": "D:\\Vs\\Curso .Net Core\\Primera aplicación\\SistemasWeb\\SistemasWeb\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Lucas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\lebrieva\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -8960,6 +8960,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "projectReferences": {}
         }
       },
@@ -8971,6 +8972,7 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
             "target": "Package",
@@ -9019,7 +9021,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }

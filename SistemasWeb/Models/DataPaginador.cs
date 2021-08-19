@@ -13,7 +13,6 @@ namespace SistemasWeb.Models
         public T Entity { get; set; }
         public int Records { get; set; }
         public string Search { get; set; }
-
         public string ErrorMessage { get; set; }
     }
 }

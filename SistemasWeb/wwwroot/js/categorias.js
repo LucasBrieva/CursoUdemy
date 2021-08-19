@@ -2,12 +2,10 @@
 class Categorias {
 
     RegistrarCategoria() {
-        debugger;
         $.post(
             "SaveCategorias",
             $(".formCategoria").serialize(),
             (response) => {
-                debugger;
                 try {
                     var item = JSON.parse(response);
                     if (item.Code == 'Done') {
@@ -22,5 +20,10 @@ class Categorias {
                 }
             }
         );
+    }
+
+    SeleccionarRegistros(val) {
+        debugger;
+        window.location.href = "Index/?records=" + parseInt($("#selectRecords").val());
     }
 }
